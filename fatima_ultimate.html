@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CD Fátima - Danpro Music</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .product-image {
+            transition: transform 0.3s ease;
+        }
+        .product-image:hover {
+            transform: scale(1.05);
+        }
+        .rating-star {
+            color: #d1d5db;
+        }
+        .rating-star.active {
+            color: #f59e0b;
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.5s;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .add-to-cart {
+            transition: all 0.3s ease;
+        }
+        .add-to-cart:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+    <!-- Header -->
+    <header class="bg-indigo-900 text-white shadow-lg">
+        <div class="container mx-auto px-4 py-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center mb-4 md:mb-0">
+                    <i class="fas fa-compact-disc text-3xl mr-3"></i>
+                    <h1 class="text-2xl font-bold">Danpro Music</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumbs -->
+    <div class="container mx-auto px-4 py-4 text-sm text-gray-600">
+        <a href="#" class="hover:text-indigo-700">Home</a> >
+        <span class="text-indigo-900 font-medium">CD Fátima</span>
+    </div>
+
+    <!-- Main Product Section -->
+    <main class="container mx-auto px-4 py-8">
+        <div class="flex flex-col lg:flex-row gap-8">
+            <!-- Product Images -->
+            <div class="lg:w-1/2">
+                <div class="bg-white rounded-lg shadow-md p-4 mb-4">
+                    <img id="mainImage" src="cd.png" alt="CD Fátima" class="w-full h-auto rounded product-image">
+                </div>
+                <div class="grid grid-cols-5 gap-2">
+                    <div class="cursor-pointer border rounded p-1 hover:border-indigo-500 transition" onclick="changeMainImage('https://via.placeholder.com/600x600?text=CD+Fátima+Capa')">
+                        <img src="cd.png" alt="Capa" class="w-full h-auto product-image">
+                    </div>
+                    <div class="cursor-pointer border rounded p-1 hover:border-indigo-500 transition" onclick="changeMainImage('https://via.placeholder.com/600x600?text=CD+Fátima+1')">
+                        <img src="cd.png" alt="Foto 1" class="w-full h-auto product-image">
+                    </div>
+                    <div class="cursor-pointer border rounded p-1 hover:border-indigo-500 transition" onclick="changeMainImage('https://via.placeholder.com/600x600?text=CD+Fátima+2')">
+                        <img src="cd.png" alt="Foto 2" class="w-full h-auto product-image">
+                    </div>
+                    <div class="cursor-pointer border rounded p-1 hover:border-indigo-500 transition" onclick="changeMainImage('https://via.placeholder.com/600x600?text=CD+Fátima+3')">
+                        <img src="cd.png" alt="Foto 3" class="w-full h-auto product-image">
+                    </div>
+                    <div class="cursor-pointer border rounded p-1 hover:border-indigo-500 transition" onclick="changeMainImage('https://via.placeholder.com/600x600?text=CD+Fátima+4')">
+                        <img src="cd.png" alt="Foto 4" class="w-full h-auto product-image">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Info -->
+            <div class="lg:w-1/2">
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h1 class="text-3xl font-bold text-gray-800 mb-2">CD Fátima Ultimate</h1>
+                    <div class="flex items-center mb-4">
+                        <div class="flex mr-2">
+                            <i class="fas fa-star rating-star active"></i>
+                            <i class="fas fa-star rating-star active"></i>
+                            <i class="fas fa-star rating-star active"></i>
+                            <i class="fas fa-star rating-star active"></i>
+                            <i class="fas fa-star rating-star"></i>
+                        </div>
+                        <span class="text-gray-600">(12 avaliações)</span>
+                    </div>
+                    <div class="text-2xl font-bold text-indigo-900 mb-4">R$ 49,90</div>
+                    <p class="text-gray-700 mb-6">O CD Fátima traz uma coletânea de músicas especiais que marcaram história na vida de Fátima. O CD Fátima Ultimate tem como objetivo relembrar todo o sucesso que a coletânia de CDs da Fátima fez, trazendo além de músicas que já passaram pela marca, como também músicas novas!</p>
+                    
+                    <button class="add-to-cart bg-indigo-900 text-white px-6 py-3 rounded-lg font-bold w-full mb-4 hover:bg-indigo-800">
+                        <i class="fas fa-shopping-cart mr-2"></i> Adicionar ao Carrinho
+                    </button>
+                    
+                    <div class="flex space-x-4">
+                        <button class="flex items-center justify-center text-gray-700 border border-gray-300 px-4 py-2 rounded-lg w-1/2 hover:bg-gray-100">
+                            <i class="far fa-heart mr-2"></i> Favoritos
+                        </button>
+                        <button class="flex items-center justify-center text-gray-700 border border-gray-300 px-4 py-2 rounded-lg w-1/2 hover:bg-gray-100">
+                            <i class="fas fa-share-alt mr-2"></i> Compartilhar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product Tabs -->
+        <div class="mt-12 bg-white rounded-lg shadow-md overflow-hidden">
+            <div class="flex border-b">
+                <button class="tab-btn py-4 px-6 font-medium text-indigo-900 border-b-2 border-indigo-900" data-tab="description">Descrição</button>
+                <button class="tab-btn py-4 px-6 font-medium text-gray-600 hover:text-indigo-900" data-tab="details">Detalhes</button>
+                <button class="tab-btn py-4 px-6 font-medium text-gray-600 hover:text-indigo-900" data-tab="reviews">Avaliações</button>
+            </div>
+            
+            <div class="p-6">
+                <!-- Description Tab -->
+                <div id="description" class="tab-content active">
+                    <h2 class="text-xl font-bold mb-4">Sobre o CD Fátima Ultimate</h2>
+                    <p class="mb-4 text-gray-700">O CD Fátima Ultimate é um disco que contém diversos tipos de música para ser possivel escutar em rádios compativeis, especialmente em automóveis. Ele é o último da linha CD Fátima, sendo um dos melhores entre os outros 4 lançados.</p>
+                    <p class="mb-4 text-gray-700">A Danpro Music, produtora de todos os discos CD Fátima tem como objetivo principal proporcionar alegria e motivação para a querida ouvinte Fátima. Não temos objetivo de obter lucros financeiros com o "produto", apenas apresentar um projeto de sucesso para a Fámilia.</p>
+                    </ul>
+                </div>
+                
+                <!-- Details Tab -->
+                <div id="details" class="tab-content">
+                    <h2 class="text-xl font-bold mb-4">Detalhes do Produto</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <h3 class="font-semibold mb-2">Informações Técnicas</h3>
+                            <ul class="text-gray-700">
+                                <li class="mb-2"><span class="font-medium">Formato:</span> CD</li>
+                                <li class="mb-2"><span class="font-medium">Duração:</span> 5 horas</li>
+                                <li class="mb-2"><span class="font-medium">Gravadora:</span> Danpro Music</li>
+                                <li class="mb-2"><span class="font-medium">Data de Lançamento:</span> 15/12/2025</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold mb-2">Artistas principais</h3>
+                            <ol class="text-gray-700 list-decimal pl-5">
+                                <li class="mb-1">Bon Jovi</li>
+                                <li class="mb-1">Bee Gees</li>
+                                <li class="mb-1">E muito mais!</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Reviews Tab -->
+                <div id="reviews" class="tab-content">
+                    <h2 class="text-xl font-bold mb-4">Avaliações dos Clientes</h2>
+                    
+                    <div class="mb-8">
+                        <h3 class="font-semibold mb-2">Deixe sua avaliação</h3>
+                        <div class="flex mb-2">
+                            <span class="mr-2">Sua nota:</span>
+                            <div class="flex" id="rating-stars">
+                                <i class="fas fa-star cursor-pointer text-gray-300 hover:text-yellow-400 mr-1" data-rating="1"></i>
+                                <i class="fas fa-star cursor-pointer text-gray-300 hover:text-yellow-400 mr-1" data-rating="2"></i>
+                                <i class="fas fa-star cursor-pointer text-gray-300 hover:text-yellow-400 mr-1" data-rating="3"></i>
+                                <i class="fas fa-star cursor-pointer text-gray-300 hover:text-yellow-400 mr-1" data-rating="4"></i>
+                                <i class="fas fa-star cursor-pointer text-gray-300 hover:text-yellow-400" data-rating="5"></i>
+                            </div>
+                        </div>
+                        <textarea class="w-full border border-gray-300 rounded p-2 mb-2" rows="3" placeholder="Escreva sua avaliação..."></textarea>
+                        <button class="bg-indigo-900 text-white px-4 py-2 rounded hover:bg-indigo-800">Enviar Avaliação</button>
+                    </div>
+                    
+                    <div class="space-y-6">
+                        <!-- Review 1 -->
+                        <div class="border-b pb-4">
+                            <div class="flex items-center mb-2">
+                                <div class="flex mr-2">
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                </div>
+                                <span class="font-medium">Fátima Maria</span>
+                                <span class="text-gray-500 text-sm ml-2">- 10/06/2025</span>
+                            </div>
+                            <p class="text-gray-700"></p>
+                        </div>Simplesmente maravilhoso! As músicas são muito bonitas e a qualidade do som é excelente. Recomendo para todos que apreciam músicas diversas!</p>
+                        
+                        <!-- Review 2 -->
+                        <div class="border-b pb-4">
+                            <div class="flex items-center mb-2">
+                                <div class="flex mr-2">
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-gray-300"></i>
+                                </div>
+                                <span class="font-medium">João Santos</span>
+                                <span class="text-gray-500 text-sm ml-2">- 25/05/2023</span>
+                            </div>
+                            <p class="text-gray-700">Ótima qualidade de som e diversos hits. Só não dei 5 estrelas porque esperava mais algumas músicas tradicionais, mas no geral estou muito satisfeito com a compra.</p>
+                        </div>
+                        
+                        <!-- Review 3 -->
+                        <div class="pb-4">
+                            <div class="flex items-center mb-2">
+                                <div class="flex mr-2">
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                </div>
+                                <span class="font-medium">Danilo Jorge</span>
+                                <span class="text-gray-500 text-sm ml-2">- 18/11/2025</span>
+                            </div>
+                            <p class="text-gray-700">Comprei para presentear minha avó que é Fátima, ela adorou e escuta músicas todos os dias em seu carro!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Related Products -->
+        <div class="mt-12">
+            <h2 class="text-2xl font-bold mb-6">Você também pode gostar</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <!-- Product 1 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
+                    <img src="https://via.placeholder.com/300x300?text=CD+Maria" alt="CD Experience" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-medium text-gray-800 mb-1">CD Fátima Experience</h3>
+                        <div class="flex mb-2">
+                            <i class="fas fa-star text-yellow-400 text-xs"></i>
+                            <i class="fas fa-star text-yellow-400 text-xs"></i>
+                            <i class="fas fa-star text-yellow-400 text-xs"></i>
+                            <i class="fas fa-star text-yellow-400 text-xs"></i>
+                            <i class="fas fa-star text-gray-300 text-xs"></i>
+                        </div>
+                        <div class="font-bold text-indigo-900">R$ 42,90</div>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
+                    <img src="https://via.placeholder.com/300x300?text=CD+Divina+Misericórdia" alt="CD Unlimited" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-medium text-gray-800 mb-1">CD Fátima Unlimited</h3>
+                        <div class="flex mb-2">
+                            <i class="fas fa-star text-yellow-400 text-xs"></i>
+                            <i class="fas fa-star text-yellow-400 text-xs"></i>
+                            <i class="fas fa-star text-yellow-400 text-xs"></i>
+                            <i class="fas fa-star text-yellow-400 text-xs"></i>
+                            <i class="fas fa-star text-yellow-400 text-xs"></i>
+                        </div>
+                        <div class="font-bold text-indigo-900">R$ 44,90</div>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
+                    <img src="https://via.placeholder.com/300x300?text=CD+Santo+Rosário" alt="CD 2" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-medium text-gray-800 mb-1">CD Fátima 2</h3>
+                        <div class="flex mb-2">
+                            <i class="fas fa-star text-yellow-400 text-xs"></i>
+                            <i class="fas fa-star text-yellow-400 text-xs"></i>
+                            <i class="fas fa-star text-yellow-400 text-xs"></i>
+                            <i class="fas fa-star text-yellow-400 text-xs"></i>
+                            <i class="fas fa-star-half-alt text-yellow-400 text-xs"></i>
+                        </div>
+                        <div class="font-bold text-indigo-900">R$ 38,90</div>
+                    </div>
+                </div>
+                
+                <!-- Product 4 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
+                    <img src="https://via.placeholder.com/300x300?text=CD+Cantos+Gregorianos" alt="CD 1" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-medium text-gray-800 mb-1">CD Fátima 1</h3>
+                        <div class="flex mb-2">
+                            <i class="fas fa-star text-yellow-400 text-xs"></i>
+                            <i class="fas fa-star text-yellow-400 text-xs"></i>
+                            <i class="fas fa-star text-yellow-400 text-xs"></i>
+                            <i class="fas fa-star text-yellow-400 text-xs"></i>
+                            <i class="fas fa-star text-yellow-400 text-xs"></i>
+                        </div>
+                        <div class="font-bold text-indigo-900">R$ 39,90</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 Danpro Music. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Change main product image
+        function changeMainImage(src) {
+            document.getElementById('mainImage').src = src;
+        }
+
+        // Quantity controls
+        function increaseQuantity() {
+            const quantityInput = document.getElementById('quantity');
+            quantityInput.value = parseInt(quantityInput.value) + 1;
+        }
+
+        function decreaseQuantity() {
+            const quantityInput = document.getElementById('quantity');
+            if (parseInt(quantityInput.value) > 1) {
+                quantityInput.value = parseInt(quantityInput.value) - 1;
+            }
+        }
+
+        // Tab functionality
+        const tabButtons = document.querySelectorAll('.tab-btn');
+        tabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons and contents
+                tabButtons.forEach(btn => {
+                    btn.classList.remove('text-indigo-900', 'border-indigo-900');
+                    btn.classList.add('text-gray-600');
+                });
+                
+                // Add active class to clicked button
+                button.classList.remove('text-gray-600');
+                button.classList.add('text-indigo-900', 'border-indigo-900');
+                
+                // Hide all tab contents
+                document.querySelectorAll('.tab-content').forEach(content => {
+                    content.classList.remove('active');
+                });
+                
+                // Show selected tab content
+                const tabId = button.getAttribute('data-tab');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+
+        // Rating stars for review
+        const ratingStars = document.querySelectorAll('#rating-stars i');
+        ratingStars.forEach(star => {
+            star.addEventListener('click', () => {
+                const rating = parseInt(star.getAttribute('data-rating'));
+                
+                // Reset all stars
+                ratingStars.forEach(s => {
+                    s.classList.remove('text-yellow-400');
+                    s.classList.add('text-gray-300');
+                });
+                
+                // Fill stars up to the clicked one
+                for (let i = 0; i < rating; i++) {
+                    ratingStars[i].classList.remove('text-gray-300');
+                    ratingStars[i].classList.add('text-yellow-400');
+                }
+            });
+            
+            star.addEventListener('mouseover', () => {
+                const rating = parseInt(star.getAttribute('data-rating'));
+                
+                // Reset all stars to gray
+                ratingStars.forEach(s => {
+                    s.classList.remove('text-yellow-400');
+                    s.classList.add('text-gray-300');
+                });
+                
+                // Fill stars up to the hovered one
+                for (let i = 0; i < rating; i++) {
+                    ratingStars[i].classList.remove('text-gray-300');
+                    ratingStars[i].classList.add('text-yellow-400');
+                }
+            });
+        });
+
+        // Add to cart animation
+        const addToCartBtn = document.querySelector('.add-to-cart');
+        addToCartBtn.addEventListener('click', () => {
+            // Animation
+            addToCartBtn.innerHTML = '<i class="fas fa-check mr-2"></i> Adicionado!';
+            addToCartBtn.classList.remove('bg-indigo-900');
+            addToCartBtn.classList.add('bg-green-600');
+            
+            // Reset after 2 seconds
+            setTimeout(() => {
+                addToCartBtn.innerHTML = '<i class="fas fa-shopping-cart mr-2"></i> Adicionar ao Carrinho';
+                addToCartBtn.classList.remove('bg-green-600');
+                addToCartBtn.classList.add('bg-indigo-900');
+            }, 2000);
+        });
+    </script>
+</body>
+</html>
